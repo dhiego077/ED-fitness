@@ -9,7 +9,7 @@ const cartTotal = document.getElementById('cartTotal');
 const checkoutButton = document.getElementById('checkoutButton');
 const continueShopping = document.getElementById('continueShopping');
 const toast = document.getElementById('toast');
-const WHATSAPP_NUMBER = '5500000000000';
+const WHATSAPP_NUMBER = '5598985236637';
 const productCatalog = {'Top Performance':{price:89.90},'Legging Modeladora':{price:129.90},'Camiseta Dry Fit':{price:79.90},'Bolsa Fitness':{price:149.90}};
 const state={cart:JSON.parse(localStorage.getItem('edfitness-cart')||'[]')};
 const money=(value)=>value.toLocaleString('pt-BR',{style:'currency',currency:'BRL'});
@@ -22,5 +22,5 @@ let toastTimer;function showToast(message){toast.textContent=message;toast.class
 document.querySelectorAll('.add-cart').forEach((button)=>{button.addEventListener('click',(event)=>{event.preventDefault();const name=button.dataset.product;const existing=state.cart.find((item)=>item.name===name);if(existing)existing.qty+=1;else state.cart.push({name,qty:1,price:productCatalog[name]?.price||0});persist();showToast(`${name} adicionado ao carrinho`);});});
 document.querySelectorAll('[data-category]').forEach((link)=>{link.addEventListener('click',()=>sessionStorage.setItem('edfitness-category',link.dataset.category));});
 cartItems.addEventListener('click',(event)=>{const button=event.target.closest('button[data-action]');if(!button)return;const index=Number(button.dataset.index);const item=state.cart[index];if(!item)return;if(button.dataset.action==='plus')item.qty+=1;if(button.dataset.action==='minus')item.qty-=1;if(button.dataset.action==='remove'||item.qty<=0)state.cart.splice(index,1);persist();});
-checkoutButton.addEventListener('click',()=>{if(!state.cart.length)return;if(WHATSAPP_NUMBER==='5500000000000'){showToast('Configure o número do WhatsApp no script.js');return;}const lines=state.cart.map((item)=>`• ${item.qty}x ${item.name} — ${money(item.price*item.qty)}`);const total=state.cart.reduce((sum,item)=>sum+item.price*item.qty,0);const message=`Olá! Quero finalizar meu pedido na ED Fitness:\n\n${lines.join('\n')}\n\nTotal: ${money(total)}`;window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`,'_blank','noopener');});
+checkoutButton.addEventListener('click',()=>{if(!state.cart.length)return;const lines=state.cart.map((item)=>`• ${item.qty}x ${item.name} — ${money(item.price*item.qty)}`);const total=state.cart.reduce((sum,item)=>sum+item.price*item.qty,0);const message=`Olá! Quero finalizar meu pedido na ED Fitness:\n\n${lines.join('\n')}\n\nTotal: ${money(total)}`;window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`,'_blank','noopener');});
 cartButton.addEventListener('click',openCart);cartClose.addEventListener('click',closeCart);cartBackdrop.addEventListener('click',closeCart);continueShopping.addEventListener('click',closeCart);document.addEventListener('keydown',(event)=>{if(event.key==='Escape'&&cartDrawer.classList.contains('open'))closeCart();});normalizeCart();persist();
