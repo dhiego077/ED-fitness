@@ -1,0 +1,6 @@
+[
+  {"id":"top-performance","name":"Top Performance","price":89.90,"category":"tops"},
+  {"id":"legging-modeladora","name":"Legging Modeladora","price":129.90,"category":"leggings"},
+  {"id":"camiseta-dry-fit","name":"Camiseta Dry Fit","price":79.90,"category":"blusas"},
+  {"id":"bolsa-fitness","name":"Bolsa Fitness","price":149.90,"category":"acessorios"}
+]
