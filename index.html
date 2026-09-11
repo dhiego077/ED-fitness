@@ -1,82 +1,53 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="ED Fitness — Sua beleza em movimento." />
   <title>ED Fitness</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <main class="site-wrap">
-    <img src="assets/ed-fitness-layout.png" alt="Layout ED Fitness" class="layout-image">
-
-    <a href="#colecao" class="hotspot hotspot-colecao" aria-label="Ver coleção"></a>
-    <a href="#tops" class="hotspot hotspot-tops" aria-label="Ver Tops"></a>
-    <a href="#leggings" class="hotspot hotspot-leggings" aria-label="Ver Leggings"></a>
-    <a href="#blusas" class="hotspot hotspot-blusas" aria-label="Ver Blusas"></a>
-    <a href="#acessorios" class="hotspot hotspot-acessorios" aria-label="Ver Acessórios"></a>
-    <button type="button" class="hotspot hotspot-search" id="searchButton" aria-label="Buscar produtos"></button>
-    <button type="button" class="hotspot hotspot-account" id="accountButton" aria-label="Minha conta"></button>
-    <button type="button" class="hotspot hotspot-cart" id="cartButton" aria-label="Abrir carrinho">
-      <span class="cart-count" id="cartCount">0</span>
-    </button>
-    <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" class="hotspot hotspot-instagram" aria-label="Instagram"></a>
-    <a href="https://wa.me/5500000000000" target="_blank" rel="noopener noreferrer" class="hotspot hotspot-whatsapp" aria-label="WhatsApp"></a>
-
-    <button type="button" class="hotspot product-hotspot product-1" data-product-id="1" aria-label="Adicionar Conjunto Essential ao carrinho"></button>
-    <button type="button" class="hotspot product-hotspot product-2" data-product-id="2" aria-label="Adicionar Legging Move ao carrinho"></button>
-    <button type="button" class="hotspot product-hotspot product-3" data-product-id="3" aria-label="Adicionar Top Energy ao carrinho"></button>
-    <button type="button" class="hotspot product-hotspot product-4" data-product-id="4" aria-label="Adicionar Blusa Flow ao carrinho"></button>
-
-    <section class="anchor-section" id="colecao" aria-hidden="true"></section>
-    <section class="anchor-section" id="tops" aria-hidden="true"></section>
-    <section class="anchor-section" id="leggings" aria-hidden="true"></section>
-    <section class="anchor-section" id="blusas" aria-hidden="true"></section>
-    <section class="anchor-section" id="acessorios" aria-hidden="true"></section>
+  <main class="site-shell" aria-label="ED Fitness">
+    <div class="design-stage" id="inicio">
+      <img class="design-image" src="assets/ed-fitness-layout.png" alt="Layout da loja ED Fitness" width="1024" height="1536" draggable="false" />
+      <nav class="hotspots" aria-label="Navegação principal">
+        <a class="hotspot" style="--x:29.8;--y:2.6;--w:5.4;--h:3.2" href="#inicio" aria-label="Início"></a>
+        <a class="hotspot" style="--x:36.2;--y:2.6;--w:8.0;--h:3.2" href="#produtos" aria-label="Produtos"></a>
+        <a class="hotspot" style="--x:44.8;--y:2.6;--w:8.2;--h:3.2" href="#colecoes" aria-label="Coleções"></a>
+        <a class="hotspot" style="--x:53.4;--y:2.6;--w:8.0;--h:3.2" href="#sobre" aria-label="Sobre nós"></a>
+        <a class="hotspot" style="--x:62.2;--y:2.6;--w:7.0;--h:3.2" href="#contato" aria-label="Contato"></a>
+      </nav>
+      <a class="hotspot" style="--x:6.0;--y:24.0;--w:20.0;--h:4.2" href="#colecoes" aria-label="Ver coleção"></a>
+      <section id="colecoes" class="anchor" style="--top:34.0" aria-label="Coleções"></section>
+      <a class="hotspot" style="--x:3.0;--y:35.5;--w:23;--h:13" href="#produtos" data-category="tops" aria-label="Ver tops"></a>
+      <a class="hotspot" style="--x:26.7;--y:35.5;--w:23;--h:13" href="#produtos" data-category="leggings" aria-label="Ver leggings"></a>
+      <a class="hotspot" style="--x:50.6;--y:35.5;--w:23;--h:13" href="#produtos" data-category="blusas" aria-label="Ver blusas"></a>
+      <a class="hotspot" style="--x:74.4;--y:35.5;--w:22.7;--h:13" href="#produtos" data-category="acessorios" aria-label="Ver acessórios"></a>
+      <section id="produtos" class="anchor" style="--top:50.0" aria-label="Produtos em destaque"></section>
+      <a class="hotspot add-cart" style="--x:21.0;--y:67.5;--w:5.5;--h:3.8" href="#" data-product="Top Performance" aria-label="Adicionar Top Performance ao carrinho"></a>
+      <a class="hotspot add-cart" style="--x:45.8;--y:67.5;--w:5.5;--h:3.8" href="#" data-product="Legging Modeladora" aria-label="Adicionar Legging Modeladora ao carrinho"></a>
+      <a class="hotspot add-cart" style="--x:69.3;--y:67.5;--w:5.5;--h:3.8" href="#" data-product="Camiseta Dry Fit" aria-label="Adicionar Camiseta Dry Fit ao carrinho"></a>
+      <a class="hotspot add-cart" style="--x:91.0;--y:67.5;--w:5.5;--h:3.8" href="#" data-product="Bolsa Fitness" aria-label="Adicionar Bolsa Fitness ao carrinho"></a>
+      <section id="sobre" class="anchor" style="--top:72.2" aria-label="Sobre a ED Fitness"></section>
+      <a class="hotspot" style="--x:6.0;--y:81.5;--w:23.5;--h:3.5" href="#colecoes" aria-label="Conheça a coleção"></a>
+      <section id="contato" class="anchor" style="--top:86.0" aria-label="Contato"></section>
+      <a class="hotspot external" style="--x:16.0;--y:87.3;--w:25;--h:4.2" href="https://instagram.com/edfitness" target="_blank" rel="noopener noreferrer" aria-label="Abrir Instagram da ED Fitness"></a>
+      <a class="hotspot external" style="--x:51.0;--y:87.3;--w:30;--h:4.2" href="https://wa.me/5500000000000" target="_blank" rel="noopener noreferrer" aria-label="Falar com a ED Fitness no WhatsApp"></a>
+      <button class="cart-hotspot" id="cartButton" type="button" aria-label="Abrir carrinho"><span id="cartCount" aria-live="polite">0</span></button>
+    </div>
   </main>
-
   <div class="cart-backdrop" id="cartBackdrop" hidden></div>
   <aside class="cart-drawer" id="cartDrawer" aria-hidden="true" aria-labelledby="cartTitle">
-    <div class="cart-header">
-      <div>
-        <p class="cart-kicker">ED FITNESS</p>
-        <h2 id="cartTitle">Seu carrinho</h2>
-      </div>
-      <button type="button" class="cart-close" id="cartClose" aria-label="Fechar carrinho">×</button>
-    </div>
-
-    <div class="cart-body" id="cartItems"></div>
-
-    <div class="cart-footer">
-      <div class="cart-total-row">
-        <span>Total</span>
-        <strong id="cartTotal">R$ 0,00</strong>
-      </div>
-      <button type="button" class="checkout-button" id="checkoutButton">Finalizar compra</button>
-      <p class="cart-note">O pedido será enviado pelo WhatsApp da loja.</p>
-    </div>
+    <div class="cart-header"><div><span class="cart-kicker">ED FITNESS</span><h2 id="cartTitle">Seu carrinho</h2></div><button class="cart-close" id="cartClose" type="button" aria-label="Fechar carrinho">×</button></div>
+    <div class="cart-items" id="cartItems"></div>
+    <div class="cart-empty" id="cartEmpty"><strong>Seu carrinho está vazio.</strong><span>Adicione seus favoritos para continuar.</span></div>
+    <div class="cart-footer"><div class="cart-total"><span>Total</span><strong id="cartTotal">R$ 0,00</strong></div><button class="checkout-button" id="checkoutButton" type="button">Finalizar compra</button><button class="continue-button" id="continueShopping" type="button">Continuar comprando</button></div>
   </aside>
-
-  <div class="modal-backdrop" id="modalBackdrop" hidden></div>
-  <section class="simple-modal" id="searchModal" aria-hidden="true" aria-labelledby="searchTitle">
-    <button type="button" class="modal-close" data-close-modal aria-label="Fechar">×</button>
-    <h2 id="searchTitle">Buscar produtos</h2>
-    <form id="searchForm">
-      <label for="searchInput">Digite o nome do produto</label>
-      <div class="search-row">
-        <input id="searchInput" name="search" type="search" placeholder="Ex.: legging" autocomplete="off">
-        <button type="submit">Buscar</button>
-      </div>
-    </form>
-    <p id="searchResult" class="search-result"></p>
-  </section>
-
-  <section class="simple-modal" id="accountModal" aria-hidden="true" aria-labelledby="accountTitle">
-    <button type="button" class="modal-close" data-close-modal aria-label="Fechar">×</button>
-    <h2 id="accountTitle">Minha conta</h2>
-    <p>Área demonstrativa pronta para receber login e cadastro real.</p>
-  </section>
-
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
   <script src="script.js"></script>
 </body>
 </html>
