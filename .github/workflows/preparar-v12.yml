@@ -25,6 +25,7 @@ jobs:
           set -e
           BASE="https://useedfitness.netlify.app"
           mkdir -p assets
+          curl -fL "$BASE/index.html" -o index.html
           curl -fL "$BASE/styles.css" -o styles.css
           curl -fL "$BASE/script.js" -o script.js
           curl -fL "$BASE/firebase.js" -o firebase.js
