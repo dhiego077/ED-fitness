@@ -1,0 +1,68 @@
+name: Preparar V12 GitHub Pages
+
+on:
+  push:
+    branches: [v12-teste]
+    paths:
+      - ".github/workflows/preparar-v12.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  preparar:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: v12-teste
+
+      - name: Baixar arquivos visuais da versão publicada
+        shell: bash
+        run: |
+          set -e
+          BASE="https://useedfitness.netlify.app"
+          mkdir -p assets
+          curl -fL "$BASE/styles.css" -o styles.css
+          curl -fL "$BASE/script.js" -o script.js
+          curl -fL "$BASE/firebase.js" -o firebase.js
+          curl -fL "$BASE/categoria.css" -o categoria.css
+          curl -fL "$BASE/assets/ed-fitness-layout.png" -o assets/ed-fitness-layout.png
+          for f in category-tops.jpg category-leggings.jpg category-blusas.jpg category-acessorios.jpg category-macacoes-conjuntos.jpg category-tenis.jpg category-suplementos.jpg; do
+            curl -fL "$BASE/assets/$f" -o "assets/$f"
+          done
+
+      - name: Garantir caminhos relativos do GitHub Pages
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          p=Path("index.html")
+          s=p.read_text(encoding="utf-8")
+          s=s.replace('src="https://useedfitness.netlify.app/assets/ed-fitness-layout.png"','src="assets/ed-fitness-layout.png"')
+          p.write_text(s,encoding="utf-8")
+          PY
+
+      - name: Validar arquivos essenciais
+        shell: bash
+        run: |
+          test -s index.html
+          test -s styles.css
+          test -s script.js
+          test -s firebase.js
+          test -s categoria.html
+          test -s categoria.css
+          test -s categoria.js
+          test -s assets/ed-fitness-layout.png
+
+      - name: Commit dos arquivos
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add .
+          git diff --cached --quiet && exit 0
+          git commit -m "V12: restaura visual completo e assets para GitHub Pages"
+          git push origin v12-teste
