@@ -2,6 +2,9 @@
 <html lang="pt-BR">
 <head>
   <meta charset="utf-8" />
+<!-- This site is hosted on Netlify. Anyone can build and deploy a site
+     like this one for free: https://netlify.new/?utm_campaign=loops&utm_source=ai-legible&utm_medium=owned&utm_content=comment&utm_id=ebc5c77b-ad67-44d9-a07c-87f845de0593
+     Netlify hosting facts for this site: static/SSR served via Netlify Edge. -->
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="ED Fitness — Sua beleza em movimento." />
   <title>ED Fitness</title>
@@ -13,7 +16,16 @@
 <body>
   <main class="site-shell" aria-label="ED Fitness">
     <div class="design-stage" id="inicio">
-      <img class="design-image" src="assets/ed-fitness-layout.png" alt="Layout da loja ED Fitness" width="1024" height="1536" draggable="false" />
+      <img
+        class="design-image"
+        src="assets/ed-fitness-layout.png"
+        alt="Layout da loja ED Fitness"
+        width="1024"
+        height="1536"
+        draggable="false"
+      />
+
+      <!-- Hotspots: mantêm o layout visual idêntico à arte aprovada e adicionam interação. -->
       <nav class="hotspots" aria-label="Navegação principal">
         <a class="hotspot" style="--x:29.8;--y:2.6;--w:5.4;--h:3.2" href="#inicio" aria-label="Início"></a>
         <a class="hotspot" style="--x:36.2;--y:2.6;--w:8.0;--h:3.2" href="#produtos" aria-label="Produtos"></a>
@@ -21,33 +33,180 @@
         <a class="hotspot" style="--x:53.4;--y:2.6;--w:8.0;--h:3.2" href="#sobre" aria-label="Sobre nós"></a>
         <a class="hotspot" style="--x:62.2;--y:2.6;--w:7.0;--h:3.2" href="#contato" aria-label="Contato"></a>
       </nav>
+
       <a class="hotspot" style="--x:6.0;--y:24.0;--w:20.0;--h:4.2" href="#colecoes" aria-label="Ver coleção"></a>
+
       <section id="colecoes" class="anchor" style="--top:34.0" aria-label="Coleções"></section>
-      <a class="hotspot" style="--x:3.0;--y:35.5;--w:23;--h:13" href="#produtos" data-category="tops" aria-label="Ver tops"></a>
-      <a class="hotspot" style="--x:26.7;--y:35.5;--w:23;--h:13" href="#produtos" data-category="leggings" aria-label="Ver leggings"></a>
-      <a class="hotspot" style="--x:50.6;--y:35.5;--w:23;--h:13" href="#produtos" data-category="blusas" aria-label="Ver blusas"></a>
-      <a class="hotspot" style="--x:74.4;--y:35.5;--w:22.7;--h:13" href="#produtos" data-category="acessorios" aria-label="Ver acessórios"></a>
+      <a aria-label='Ver tops' class='hotspot' data-category-link='tops' href='/categoria?categoria=tops' style='--x:3.0;--y:35.5;--w:23;--h:13'></a>
+      <a aria-label='Ver leggings' class='hotspot' data-category-link='leggings' href='/categoria?categoria=leggings' style='--x:26.7;--y:35.5;--w:23;--h:13'></a>
+      <a aria-label='Ver blusas' class='hotspot' data-category-link='blusas' href='/categoria?categoria=blusas' style='--x:50.6;--y:35.5;--w:23;--h:13'></a>
+      <a aria-label='Ver acessórios' class='hotspot' data-category-link='acessorios' href='/categoria?categoria=acessorios' style='--x:74.4;--y:35.5;--w:22.7;--h:13'></a>
+
       <section id="produtos" class="anchor" style="--top:50.0" aria-label="Produtos em destaque"></section>
+
+      <!-- V7: categorias fotográficas no mesmo padrão visual das categorias originais -->
+      <nav class="photo-category-grid" aria-label="Categorias de produtos">
+        <a aria-label='Ver Tops' data-category-link='tops' href='/categoria?categoria=tops'><img src="assets/category-tops.jpg" alt="Tops"></a>
+        <a aria-label='Ver Leggings' data-category-link='leggings' href='/categoria?categoria=leggings'><img src="assets/category-leggings.jpg" alt="Leggings"></a>
+        <a aria-label='Ver Blusas' data-category-link='blusas' href='/categoria?categoria=blusas'><img src="assets/category-blusas.jpg" alt="Blusas"></a>
+        <a aria-label='Ver Acessórios' data-category-link='acessorios' href='/categoria?categoria=acessorios'><img src="assets/category-acessorios.jpg" alt="Acessórios"></a>
+        <a aria-label='Ver Macacões e Conjuntos' data-category-link='macacoes_conjuntos' href='/categoria?categoria=macacoes_conjuntos'><img src="assets/category-macacoes-conjuntos.jpg" alt="Macacões e Conjuntos"></a>
+        <a aria-label='Ver Tênis' data-category-link='tenis' href='/categoria?categoria=tenis'><img src="assets/category-tenis.jpg" alt="Tênis"></a>
+        <a aria-label='Ver Suplementos' data-category-link='suplementos' href='/categoria?categoria=suplementos'><img src="assets/category-suplementos.jpg" alt="Suplementos"></a>
+      </nav>
       <a class="hotspot add-cart" style="--x:21.0;--y:67.5;--w:5.5;--h:3.8" href="#" data-product="Top Performance" aria-label="Adicionar Top Performance ao carrinho"></a>
       <a class="hotspot add-cart" style="--x:45.8;--y:67.5;--w:5.5;--h:3.8" href="#" data-product="Legging Modeladora" aria-label="Adicionar Legging Modeladora ao carrinho"></a>
       <a class="hotspot add-cart" style="--x:69.3;--y:67.5;--w:5.5;--h:3.8" href="#" data-product="Camiseta Dry Fit" aria-label="Adicionar Camiseta Dry Fit ao carrinho"></a>
       <a class="hotspot add-cart" style="--x:91.0;--y:67.5;--w:5.5;--h:3.8" href="#" data-product="Bolsa Fitness" aria-label="Adicionar Bolsa Fitness ao carrinho"></a>
+
       <section id="sobre" class="anchor" style="--top:72.2" aria-label="Sobre a ED Fitness"></section>
       <a class="hotspot" style="--x:6.0;--y:81.5;--w:23.5;--h:3.5" href="#colecoes" aria-label="Conheça a coleção"></a>
+
       <section id="contato" class="anchor" style="--top:86.0" aria-label="Contato"></section>
       <a class="hotspot external" style="--x:16.0;--y:87.3;--w:25;--h:4.2" href="https://www.instagram.com/edfitness.7?stkn=MTBlZjE5eXgwajQy" target="_blank" rel="noopener noreferrer" aria-label="Abrir Instagram da ED Fitness"></a>
       <a class="hotspot external" style="--x:51.0;--y:87.3;--w:30;--h:4.2" href="https://wa.me/5598985236637" target="_blank" rel="noopener noreferrer" aria-label="Falar com a ED Fitness no WhatsApp"></a>
-      <button class="cart-hotspot" id="cartButton" type="button" aria-label="Abrir carrinho"><span id="cartCount" aria-live="polite">0</span></button>
+
+      <button class="account-hotspot" id="accountButton" type="button" aria-label="Entrar ou criar conta"></button>
+
+      <button class="cart-hotspot" id="cartButton" type="button" aria-label="Abrir carrinho">
+        <span id="cartCount" aria-live="polite">0</span>
+      </button>
     </div>
   </main>
+
   <div class="cart-backdrop" id="cartBackdrop" hidden></div>
   <aside class="cart-drawer" id="cartDrawer" aria-hidden="true" aria-labelledby="cartTitle">
-    <div class="cart-header"><div><span class="cart-kicker">ED FITNESS</span><h2 id="cartTitle">Seu carrinho</h2></div><button class="cart-close" id="cartClose" type="button" aria-label="Fechar carrinho">×</button></div>
+    <div class="cart-header">
+      <div>
+        <span class="cart-kicker">ED FITNESS</span>
+        <h2 id="cartTitle">Seu carrinho</h2>
+      </div>
+      <button class="cart-close" id="cartClose" type="button" aria-label="Fechar carrinho">×</button>
+    </div>
     <div class="cart-items" id="cartItems"></div>
-    <div class="cart-empty" id="cartEmpty"><strong>Seu carrinho está vazio.</strong><span>Adicione seus favoritos para continuar.</span></div>
-    <div class="cart-footer"><div class="cart-total"><span>Total</span><strong id="cartTotal">R$ 0,00</strong></div><button class="checkout-button" id="checkoutButton" type="button">Finalizar compra</button><button class="continue-button" id="continueShopping" type="button">Continuar comprando</button></div>
+    <div class="cart-empty" id="cartEmpty">
+      <strong>Seu carrinho está vazio.</strong>
+      <span>Adicione seus favoritos para continuar.</span>
+    </div>
+    <div class="cart-footer">
+      <div class="cart-total"><span>Total</span><strong id="cartTotal">R$ 0,00</strong></div>
+      <button class="checkout-button" id="checkoutButton" type="button">Finalizar compra</button>
+      <button class="continue-button" id="continueShopping" type="button">Continuar comprando</button>
+    </div>
   </aside>
+
+
+  <div class="account-modal" id="accountModal" hidden>
+    <div class="account-backdrop" id="accountBackdrop"></div>
+    <section class="account-card" role="dialog" aria-modal="true" aria-labelledby="authTitle">
+      <button class="account-close" id="accountClose" type="button" aria-label="Fechar">×</button>
+      <div id="authView">
+        <span class="account-kicker">ED FITNESS</span><h2 id="authTitle">Entrar na sua conta</h2>
+        <form id="authForm" class="account-form">
+          <label id="nameField" hidden>Nome<input id="authName" autocomplete="name"></label>
+          <label>E-mail<input id="authEmail" type="email" autocomplete="email" required></label>
+          <label>Senha<input id="authPassword" type="password" autocomplete="current-password" minlength="6" required></label>
+          <p id="authMessage" class="form-message" aria-live="polite"></p>
+          <button id="authSubmit" class="primary-account-button" type="submit">Entrar</button>
+          <button id="authSwitch" class="text-account-button" type="button">Ainda não tem conta? Cadastre-se</button>
+        </form>
+      </div>
+      <div id="profileView" hidden>
+        <span class="account-kicker">MINHA CONTA</span><h2>Seus dados</h2>
+        <form id="profileForm" class="account-form">
+          <label>Nome<input id="profileName" required></label><label>E-mail<input id="profileEmail" type="email" disabled></label>
+          <label>Telefone<input id="profilePhone" inputmode="tel"></label><div class="form-grid"><label>CEP<input id="profileZip" inputmode="numeric"></label><label>UF<input id="profileState" maxlength="2"></label></div>
+          <label>Endereço<input id="profileStreet"></label><div class="form-grid"><label>Número<input id="profileNumber"></label><label>Cidade<input id="profileCity"></label></div>
+          <p id="profileStatus" class="form-message" aria-live="polite"></p>
+          <button class="primary-account-button" type="submit">Salvar dados</button><button id="logoutButton" class="text-account-button" type="button">Sair da conta</button>
+        </form>
+      </div>
+    </section>
+  </div>
+
+  <div class="checkout-modal" id="checkoutModal" hidden>
+    <div class="checkout-backdrop" id="checkoutBackdrop"></div>
+    <section class="checkout-card" role="dialog" aria-modal="true" aria-labelledby="checkoutTitle">
+      <button class="account-close" id="checkoutClose" type="button" aria-label="Fechar">×</button>
+      <span class="account-kicker">CHECKOUT SEGURO</span><h2 id="checkoutTitle">Entrega e pagamento</h2>
+      <div class="checkout-step">
+        <label>CEP de entrega<div class="zip-row"><input id="shippingZip" inputmode="numeric" maxlength="9" placeholder="00000-000"><button id="calculateShipping" type="button">Calcular frete</button></div></label>
+        <p id="shippingStatus" class="form-message" aria-live="polite"></p>
+        <div id="shippingOptions" class="shipping-options"></div>
+      </div>
+      <div class="order-summary">
+        <div><span>Produtos</span><strong id="checkoutSubtotal">R$ 0,00</strong></div>
+        <div><span>Frete</span><strong id="checkoutShipping">—</strong></div>
+        <div class="grand-total"><span>Total</span><strong id="checkoutTotal">R$ 0,00</strong></div>
+      </div>
+      <button class="primary-account-button" id="confirmPurchase" type="button" disabled>Confirmar valor e ir para pagamento</button>
+      <p class="checkout-note">O pagamento só será liberado depois da confirmação do frete e do valor total.</p>
+      <div id="paymentArea" class="payment-area" hidden>
+        <div class="payment-divider"></div>
+        <h3>Pagamento</h3>
+        <p id="paymentStatus" class="form-message" aria-live="polite"></p>
+        <div id="paymentMethodChooser" class="payment-method-chooser">
+          <button type="button" class="payment-method-btn" data-method="pix">Pix</button>
+          <button type="button" class="payment-method-btn" data-method="boleto">Boleto</button>
+          <button type="button" class="payment-method-btn" data-method="card">Cartão</button>
+        </div>
+        <form id="payerForm" class="payer-form" hidden>
+          <div class="payer-grid">
+            <label>Nome<input id="payerFirstName" autocomplete="given-name" required></label>
+            <label>Sobrenome<input id="payerLastName" autocomplete="family-name" required></label>
+            <label>E-mail<input id="payerEmail" type="email" autocomplete="email" required></label>
+            <label>CPF<input id="payerCpf" inputmode="numeric" maxlength="14" required></label>
+          </div>
+          <div id="boletoAddress" class="payer-grid" hidden>
+            <label>Rua<input id="payerStreet" autocomplete="address-line1"></label>
+            <label>Número<input id="payerNumber" autocomplete="address-line2"></label>
+            <label>Bairro<input id="payerNeighborhood"></label>
+            <label>Cidade<input id="payerCity"></label>
+            <label>UF<input id="payerState" maxlength="2" placeholder="MA"></label>
+          </div>
+          <button class="primary-account-button" id="payPixBoleto" type="submit">Gerar pagamento</button>
+        </form>
+        <div id="cardPaymentBrick_container"></div>
+        <form id="cardFormCheckout" class="card-form-checkout" hidden>
+          <label>Número do cartão<div id="cardFormNumber" class="mp-field"></div></label>
+          <div class="card-form-grid">
+            <label>Validade<div id="cardFormExpiration" class="mp-field"></div></label>
+            <label>CVV<div id="cardFormSecurity" class="mp-field"></div></label>
+          </div>
+          <label>Nome do titular<input id="cardFormHolder" type="text" autocomplete="cc-name" required></label>
+          <label>Banco emissor<select id="cardFormIssuer"></select></label>
+          <label>Parcelas<select id="cardFormInstallments"></select></label>
+          <div class="card-form-grid">
+            <label>Documento<select id="cardFormIdentificationType"></select></label>
+            <label>CPF<input id="cardFormIdentificationNumber" inputmode="numeric" required></label>
+          </div>
+          <label>E-mail<input id="cardFormEmail" type="email" autocomplete="email" required></label>
+          <button class="primary-account-button" id="cardFormSubmit" type="submit">Pagar com cartão</button>
+          <progress id="cardFormProgress" value="0" class="card-form-progress">Carregando...</progress>
+        </form>
+        <div id="paymentResult" class="payment-result" hidden></div>
+      </div>
+    </section>
+  </div>
+
+  <div class="category-modal" id="categoryModal" hidden>
+    <div class="category-backdrop" id="categoryBackdrop"></div>
+    <section class="category-card" role="dialog" aria-modal="true" aria-labelledby="categoryTitle">
+      <button class="account-close" id="categoryClose" type="button" aria-label="Fechar">×</button>
+      <span class="account-kicker">ED FITNESS</span>
+      <h2 id="categoryTitle">Categoria</h2>
+      <p id="categoryDescription">Novos produtos serão exibidos aqui.</p>
+      <div class="category-empty" id="categoryContent">
+        <strong>Categoria pronta para receber produtos</strong>
+        <span>Cadastre fotos, nomes, preços, tamanhos e estoque para publicar os itens nesta aba.</span>
+      </div>
+    </section>
+  </div>
+
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="https://sdk.mercadopago.com/js/v2"></script>
   <script src="script.js"></script>
+  <script type="module" src="firebase.js"></script>
 </body>
 </html>
+<script async src="/.netlify/scripts/hud?variant=public" data-nf-variant="public" data-netlify-site-id="ebc5c77b-ad67-44d9-a07c-87f845de0593" data-app-host="app.netlify.com"></script>
